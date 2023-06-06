@@ -1,0 +1,37 @@
+<section class="contact">
+    <div class="container">
+        <div class="contact-container">
+        <div class="contactleaf right"></div>
+        <h2 data-aos="fade-up">{{ section.settings.contact_text }}</h2>
+        <a data-aos="fade-up" data-aos-delay="100" href="mailto:hello@onoglams.com">
+        <button class="invert-btn">{{ section.settings.contact_button }} <span class="svg">{% include 'button-svg' %}</span></button>
+        </a>
+        <div class="contactleaf left"></div>
+        </div>
+    </div>
+
+</section>
+
+{% schema %}
+
+{
+"name": "Contact",
+"settings": [
+{
+"type": "textarea",
+"id": "contact_text",
+"label": "Contact Text",
+"default": "Got a burning question about Onoglams?",
+"placeholder": "Change Text Here..."
+},
+{
+"type": "text",
+"id": "contact_button",
+"label": "Contact Button Text",
+"default": "Contact Us",
+"placeholder": "Change Button Here..."
+}
+]
+}
+
+{% endschema %}

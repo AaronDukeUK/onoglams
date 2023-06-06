@@ -1,0 +1,82 @@
+.contact {
+  padding: 16.5rem 0;
+  background: #fdfaf7;
+}
+@media only screen and (max-device-width: 650px) {
+  .contact {
+    padding: 8rem 0;
+  }
+}
+.contact .contact-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 22px solid #f5c0af;
+  color: white;
+  background: #00442a;
+}
+@media only screen and (max-device-width: 650px) {
+  .contact .contact-container {
+    height: auto;
+    padding: 60px 20px;
+  }
+}
+.contact .contact-container h2 {
+  margin-bottom: 40px;
+  width: 385px;
+  text-align: center;
+}
+@media only screen and (max-device-width: 650px) {
+  .contact .contact-container h2 {
+    width: 80%;
+  }
+}
+@media only screen and (max-device-width: 450px) {
+  .contact .contact-container h2 {
+    width: 100%;
+  }
+}
+.contact .contact-container .contactleaf {
+  width: 324px;
+  height: 353px;
+  position: absolute;
+  background-image: url("../images/contactleaf.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1200px) {
+  .contact .contact-container .contactleaf {
+    width: 210px;
+    height: 230px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .contact .contact-container .contactleaf {
+    display: none;
+  }
+}
+.contact .contact-container .left {
+  left: 105px;
+  bottom: -170px;
+  transform: rotate(-138.4deg);
+  background-image: url("../images/contactleafgreen.svg");
+}
+@media only screen and (max-device-width: 1200px) {
+  .contact .contact-container .left {
+    bottom: -130px;
+    left: 20px;
+  }
+}
+.contact .contact-container .right {
+  right: 0;
+  top: -150px;
+}
+@media only screen and (max-device-width: 1200px) {
+  .contact .contact-container .right {
+    top: -150px;
+  }
+}

@@ -1,0 +1,24 @@
+<section class="banner info-page-banner">
+    <div class="leaf left"></div>
+    <h2>
+        {{section.settings.privacy_banner_text}}
+    </h2>
+    <div class="leaf right"></div>
+</section>
+
+{% schema %}
+
+{
+    "name": "Privacy Banner",
+    "settings": [
+        {
+            "type": "textarea",
+            "id": "privacy_banner_text",
+            "label": "Banner Text",
+            "default": "Our privacy policy",
+            "placeholder": "Change Text Here..."
+        }
+    ]
+}
+
+{% endschema %}

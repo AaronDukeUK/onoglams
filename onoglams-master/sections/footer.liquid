@@ -1,0 +1,62 @@
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a class="logo" href="/">{{ 'logo.png' | asset_url | img_tag: 'Logo' }}</a>
+                <div class="social phone-social">
+                    <a href="/">
+                        {% include 'instagram' %}
+                    </a>
+                    <a href="/">
+                        {% include 'twitter' %}
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <a href="/collections/all">Shop</a>
+                        <a href="/pages/about">About us</a>
+                        {% if customer %}
+                            <a href="/account">Account</a>
+                        {% else %}
+                            {{ "Sign in" | customer_login_link }}
+                        {% endif %}
+                    </ul>
+                    <ul>
+                        <a href="/pages/returns">Returns Policy</a>
+                        <a href="/pages/privacy">Privacy Policy</a>
+                        <a href="/pages/cookie-policy">Cookie Policy</a>
+                    </ul>
+                </div>
+                <div class="copy">
+                    <p>&#169; 2020 Onoglams</p>
+                    <p class="nomarg">
+                        Website by
+                        <a class="mbs" href="https://madebysphere.com/">MadeBySphere</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="social large-social">
+                    <a href="/">
+                        {% include 'instagram' %}
+                    </a>
+                    <a href="/">
+                        {% include 'twitter' %}
+                    </a>
+                </div>
+                <a class="bold">Contact</a>
+                <a class="nomarg" href="mailto:hello@onoglams.com">hello@onoglams.com</a>
+            </div>
+
+            <div class="copy-phone">
+                <p>&#169; 2020 Onoglams</p>
+                <p class="nomarg">
+                    Website by
+                    <a class="mbs" href="https://madebysphere.com/">MadeBySphere</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footerleaf"></div>
+</footer>

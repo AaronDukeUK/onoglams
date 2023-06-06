@@ -1,0 +1,40 @@
+@import "variables"
+
+.info-page
+    padding: 80px 0 40px 0
+    width: 100%
+    background: $onoBG
+    color: $onogreen
+    font-size: 1.6rem
+    @media only screen and (max-width: 1200px)
+        padding: 40px 0
+    @media only screen and (max-width: 650px)
+        padding: 0
+
+.info-container
+    width: $aboutWidth
+    p
+        padding: 10px 0
+        a
+            border-bottom: 1px solid transparent
+            transition: 0.25s ease-out
+            font-weight: 700
+            &:hover
+                border-bottom-color: $onogreen
+    h1
+        font-size: 2.8rem
+        font-family: "Recoleta", serif
+    h2
+        font-size: 2.5rem
+    ul
+        list-style: disc
+        li
+            font-size: 1.6rem
+            font-family: "Karla", sans-serif
+            margin-left: 2rem
+    table
+        font-size: 1.6rem
+    @media only screen and (max-width: 1200px)
+        width: 100%
+
+

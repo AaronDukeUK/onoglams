@@ -1,0 +1,282 @@
+<!-- /templates/customers/addresses.liquid -->
+<div class="address-page">
+  <div class="container">
+    <div class="account-image"></div>
+    <div class="address-info" id="address" style="display: block">
+      <h2>Addresses</h2>
+      {% if customer.addresses.size == 0 %}
+      <p class="no-address">You haven't saved any addresses yet.</p>
+      {% endif %} {% if customer.addresses.size != 0 %}
+      <div class="addresses-container">
+        {% for address in customer.addresses %}
+        <div>
+          <p>{{ address.name }}</p>
+          <p>{{ address.address1 }}</p>
+          <p>{{ address.address2 }}</p>
+          <p>{{ address.city }}</p>
+          <p>{{ address.zip }}</p>
+          <p>{{ address.country }}</p>
+          <button class="btn-green edit addy-btn" onclick="showEdit()">
+            Edit
+          </button>
+          <button
+            class="btn-green delete-button addy-btn invert-btn-green"
+            onclick="showDelete()"
+          >
+            Delete
+          </button>
+          <div class="delete-confirm" id="delete-confirm" style="display: none">
+            <div>
+              <h3>Are you sure you want to delete this address?</h3>
+              <div>
+                <button
+                  class="btn-green edit addy-btn"
+                  id="cancel"
+                  onclick="hideDelete()"
+                >
+                  Cancel
+                </button>
+                <form
+                  action="/account/addresses/{{ address.id }}"
+                  class="address-delete-form"
+                  method="post"
+                >
+                  <input name="_method" type="hidden" value="delete" />
+
+                  <button
+                    class="btn-green addy-btn invert-btn-green"
+                    type="submit"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edit-address" id="editAddress" style="display: none">
+          <div>
+            <h2>Edit address</h2>
+            <div class="add-container">
+              {% form 'customer_address', address %}
+              <div class="group">
+                <input
+                  name="address[first_name]"
+                  required
+                  type="text"
+                  value="{{ address.first_name }}"
+                />
+                <span class="bar"></span>
+                <label>First Name</label>
+              </div>
+              <div class="group">
+                <input
+                  name="address[last_name]"
+                  required
+                  type="text"
+                  value="{{ address.last_name }}"
+                />
+                <span class="bar"></span>
+                <label>Last Name</label>
+              </div>
+              <div class="group">
+                <input
+                  name="address[address1]"
+                  required
+                  type="text"
+                  value="{{ address.address1 }}"
+                />
+                <span class="bar"></span>
+                <label>Address line 1</label>
+              </div>
+              <div class="group">
+                <input
+                  name="address[address2]"
+                  type="text"
+                  value="{{ address.address2 }}"
+                />
+                <span class="bar"></span>
+                <label>Address line 2</label>
+              </div>
+              <div class="group">
+                <input
+                  name="address[city]"
+                  required
+                  type="text"
+                  value="{{ address.city }}"
+                />
+                <span class="bar"></span>
+                <label>City</label>
+              </div>
+              <div class="group">
+                <input
+                  name="address[zip]"
+                  required
+                  type="text"
+                  value="{{ address.zip }}"
+                />
+                <span class="bar"></span>
+                <label>Postcode</label>
+              </div>
+              <div class="group">
+                <label class="countryLabel">Country</label>
+                <select
+                  autocomplete="country"
+                  name="address[country]"
+                  required
+                  type="select"
+                  value="{{ address.country }}"
+                >
+                  {{
+                    country_option_tags
+                  }}
+                </select>
+              </div>
+              <button class="btn-green add-address-btn" type="submit">
+                Save Changes
+                <span class="svg">
+                  {{ "buttonsvggreen.svg" | asset_url | img_tag: "Stars" }}
+                </span>
+              </button>
+              {% endform %}
+            </div>
+            <div class="back">
+              <a href="/account/addresses"> Back to your addresses </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <button
+        class="btn-green add-address-btn invert-btn-green"
+        onclick="showAddAddress()"
+      >
+        Add New Address
+        <span class="svg svg-green"> {% include 'button-svg' %} </span>
+      </button>
+      <div class="back">
+        <a href="/account"> Back to your account </a>
+      </div>
+    </div>
+
+    <div class="add-info" id="addAddress" style="display: none">
+      <h2>Add new address</h2>
+      <div class="add-container">
+        {% form 'customer_address', customer.new_address %}
+        <div class="group">
+          <input name="address[first_name]" required type="text" />
+          <span class="bar"></span>
+          <label>First Name</label>
+        </div>
+        <div class="group">
+          <input name="address[last_name]" required type="text" />
+          <span class="bar"></span>
+          <label>Last Name</label>
+        </div>
+        <div class="group">
+          <input name="address[address1]" required type="text" />
+          <span class="bar"></span>
+          <label>Address line 1</label>
+        </div>
+        <div class="group">
+          <input name="address[address2]" type="text" />
+          <span class="bar"></span>
+          <label>Address line 2</label>
+        </div>
+        <div class="group">
+          <input name="address[city]" required type="text" />
+          <span class="bar"></span>
+          <label>City</label>
+        </div>
+        <div class="group">
+          <input name="address[zip]" required type="text" />
+          <span class="bar"></span>
+          <label>Postcode</label>
+        </div>
+        <div class="group">
+          <label class="countryLabel">Country</label>
+          <select
+            autocomplete="country"
+            name="address[country]"
+            required
+            type="select"
+          >
+            {{
+              country_option_tags
+            }}
+          </select>
+        </div>
+        <button
+          class="btn-green add-address-btn invert-btn-green"
+          type="submit"
+        >
+          Add Address
+          <span class="svg svg-green"> {% include 'button-svg' %} </span>
+        </button>
+        {% endform %}
+      </div>
+      <div class="back">
+        <a href="/account/addresses"> Back to your addresses </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const confirm = document.getElementById("delete-confirm");
+  const cancel = document.getElementById("cancel");
+  const address = document.getElementById("address");
+  const addAddress = document.getElementById("addAddress");
+  const editAddress = document.getElementById("editAddress");
+
+  showDelete = () => {
+    if (confirm.style.display === "none") {
+      confirm.style.display = "block";
+    } else {
+      confirm.style.display = "none";
+    }
+  };
+
+  hideDelete = () => {
+    if (confirm.style.display === "none") {
+      confirm.style.display = "block";
+    } else {
+      confirm.style.display = "none";
+    }
+  };
+
+  showAddAddress = () => {
+    if (address.style.display === "block") {
+      address.style.display = "none";
+      addAddress.style.display = "block";
+    } else {
+      address.style.display = "block";
+    }
+  };
+
+  showEdit = () => {
+    if (editAddress.style.display === "none") {
+      editAddress.style.display = "block";
+    } else {
+      editAddress.style.display = "none";
+    }
+  };
+</script>
+
+{% comment %} {% for address in customer.addresses %}
+{{ address.street }}
+
+<div>
+  <p>Steph Slater</p>
+  <p>1 Madeup Lane</p>
+  <p>Madeupville</p>
+  <p>Madeuptown</p>
+  <p>M4D3 UP</p>
+  <p>United Kingdom</p>
+  <button class="btn-green edit">Edit</button>
+  <button class="btn-green">Delete</button>
+</div>
+
+{% endfor %} {% endcomment % {% endcomment %}

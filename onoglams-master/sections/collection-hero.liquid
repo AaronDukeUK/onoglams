@@ -1,0 +1,18 @@
+<section class="collection-hero">
+  <div class="container">
+    <div class="collection-heroContent">
+      <h1 data-aos="fade-up">
+        All
+        {{ collection.title }}
+      </h1>
+      {% if collection.title == 'Products' %}
+      <p data-aos="fade-up" data-aos-delay="100">
+        Our easiest chuck-on-and-go staples come with a serious style heritage
+        that’s liberating, sexy, comfy and supremely cool.
+      </p>
+      {% else %}
+      <p>{{ collection.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<section class="announcement">
+  {{section.settings.announcement_text}}
+</section>
+{% schema %}
+{
+    "name": "Announcement",
+    "settings": [
+        {
+            "type": "text",
+            "id": "announcement_text",
+            "label": "Announcement Text",
+            "default": "✨ Free UK standard delivery ✨",
+            "placeholder": "Enter announcement text..."
+        }
+    ]
+}
+
+{% endschema %}

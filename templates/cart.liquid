@@ -1,0 +1,93 @@
+<div class="cart-page">
+    <div class="container">
+        <div class="overlay" id="overlay" style="transition: opacity 0.5s linear; opacity: 0"></div>
+        <div class="cart-header">
+            <h1 data-aos="fade-up">Your basket</h1>
+            {% if cart.item_count > 0 %}
+                <a data-aos="fade-up" data-aos-delay="50" href="/collections/all">
+                    {% include 'return-arrow' %}
+                    <p>Continue shopping</p>
+                </a>
+            {% endif %}
+        </div>
+        {% if cart.item_count > 0 %}
+
+            <form action="/cart" method="post" novalidate>
+                <div class="products-list">
+                    {% for item in cart.items %}
+                        {% include 'cart-item', index: forloop.index0 %}
+                    {% endfor %}
+                </div>
+
+                <div class="summary">
+                    <div class="summary-button" id="button" onclick="showSummary()">
+                        {% include 'summary-icon' %}
+                    </div>
+                    <div class="hidden" id="header" style="transition: all 0.5s linear; max-height: 0px">
+                        <h2 data-aos="fade-up">Summary</h2>
+                    </div>
+                    <h2 class="hide">Summary</h2>
+                    <div data-aos="fade-up" data-aos-delay="50" class="total">
+                        <span>Total:</span>
+                        <span class="money">{{ cart.total_price | money }}</span>
+                    </div>
+                    <button data-aos="fade-up" data-aos-delay="100" name="checkout" type="submit">Proceed to checkout</button>
+                    <div class="hidden payments-container" id="payments" style="transition: all 0.5s linear; max-height: 0px">
+                        <p>We accept:</p>
+                        <div class="payments">
+                            {{ "payments.png" | asset_url | img_tag: "Payment" }}
+                        </div>
+                        <div class="discounts">
+                            <div class="discounts-icon">
+                                {{ "percent.svg" | asset_url | img_tag: "Percent" }}
+                            </div>
+                            <p>Got a discount code? Add it in the next step</p>
+                        </div>
+                    </div>
+                    <div class="hide payments-container">
+                        <p data-aos="fade-up" data-aos-delay="150">We accept:</p>
+                        <div data-aos="fade-up" data-aos-delay="200" class="payments">
+                            {{ "payments.png" | asset_url | img_tag: "Payment" }}
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="250" class="discounts">
+                            <div class="discounts-icon"></div>
+                            <p>Got a discount code? Add it in the next step</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        {% else %}
+            <div class="cart-empty">
+                <p>Your Basket is empty.</p>
+                <a href="/collections/all">
+                    <button class="btn-white invert-btn-green">
+                        Shop All Products
+                        <span class="svg svg-green">
+                            {% include 'button-svg' %}
+                        </span>
+                    </button>
+                </a>
+            </div>
+            <div class="cartleaf right"></div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+  function showSummary() {
+    const button = document.getElementById("button");
+    const header = document.getElementById("header");
+    const payments = document.getElementById("payments");
+    const overlay = document.getElementById("overlay");
+    if (header.style.maxHeight === "0px") {
+      header.style.maxHeight = "40px";
+      payments.style.maxHeight = "150px";
+      overlay.style.opacity = "0.5";
+    } else {
+      header.style.maxHeight = "0px";
+      payments.style.maxHeight = "0px";
+      overlay.style.opacity = "0";
+    }
+  }
+</script>

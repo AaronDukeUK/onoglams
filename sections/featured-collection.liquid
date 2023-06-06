@@ -1,0 +1,49 @@
+{% assign collection = collections['featured'] %}
+
+<section class="featured-collection">
+    <div class="container">
+        <h2 data-aos="fade-up">{{ section.settings.collection_title }}</h2>
+        <div class="featured-product-container">
+
+            {% for item in collection.products %}
+
+                {% include 'product-item', index: forloop.index0 %}
+
+            {% else %}
+                <p class="infoText">No Matches. Please Select a Collection.</p>
+            {% endfor %}
+
+        </div>
+        <a data-aos="fade-up" data-aos-delay="200" href="/collections/all">
+            <button class="btn-green invert-btn-green">
+                {{section.settings.featured_button}}
+                <span class="svg svg-green">
+                    {% include 'button-svg' %}
+                </span>
+            </button>
+        </a>
+    </div>
+</section>
+
+{% schema %}
+
+{
+    "name": "Featured Collection",
+    "settings": [
+        {
+            "type": "text",
+            "id": "collection_title",
+            "label": "Title",
+            "default": "Best Sellers",
+            "placeholder": "Change Title Here..."
+        }, {
+            "type": "text",
+            "id": "featured_button",
+            "label": "Featured Button Text",
+            "default": "Shop All Products",
+            "placeholder": "Change Button Here..."
+        }
+    ]
+}
+
+{% endschema %}

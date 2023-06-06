@@ -1,0 +1,61 @@
+@import "variables"
+
+.product-container, .featured-product-container
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    width: 100%
+    flex-wrap: wrap
+    z-index: 1
+    @media only screen and (max-width: 1200px)
+        justify-content: center
+
+    .product
+        display: flex
+        flex-direction: column
+        margin: 20px 0
+        width: 355px
+        @media only screen and (max-width: 1200px)
+            margin: 20px
+        @media only screen and (max-width: 850px)
+            width: 40%
+        @media only screen and (max-width: 650px)
+            flex-grow: 1
+            margin: 20px 5px
+        @media only screen and (max-width: 350px)
+            width: 100%
+            
+
+        
+        img
+            margin-bottom: 25px
+            width: 100%
+            height: 438px
+            object-fit: cover
+            @media only screen and (max-width: 850px)
+                height: 400px
+            @media only screen and (max-width: 650px)
+                height: 200px
+            @media only screen and (max-width: 450px)
+                height: 180px
+            @media only screen and (max-width: 350px)
+                height: 200px
+
+        h3
+            margin-bottom: 0px
+            font-size: $itemTitleTextSize
+            line-height: $itemTitleLineHeight
+            font-weight: $itemTitleWeight
+            @media only screen and (max-width: 650px)
+                font-size: $itemTitleTextSize-small
+                line-height: $itemTitleLineHeight-small
+
+.featured-product-container
+
+    .product:last-child
+        img
+            @media only screen and (max-width: 650px)
+                height: 400px
+            @media only screen and (max-width: 350px)
+                height: 200px
+

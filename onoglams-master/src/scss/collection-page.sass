@@ -1,0 +1,77 @@
+@import "variables"
+
+.collection-page
+    padding: 10rem 0rem
+    background: $onoBG
+    color: $onogreen
+    position: relative
+    overflow: hidden
+    @media only screen and (max-width: 650px)
+        padding: 8rem 0rem
+
+    .leaf
+        position: absolute
+        width: 288px
+        height: 241px
+        background-image: url('../images/bannerleaf.png')
+        background-size: contain
+        background-repeat: no-repeat
+        @media only screen and (max-width: 650px)
+            width: 216px
+            height: 181px
+
+    .left
+        transform: matrix(-1, 0, 0, 1, 0, 0)
+        left: -40px
+        bottom: 275px
+        @media only screen and (max-width: 1250px)
+            display: none
+        
+    .right
+        right: -40px
+        top: 275px
+        @media only screen and (max-width: 1250px)
+            top: 90px
+        @media only screen and (max-width: 650px)
+            top: 120px
+
+    .container
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        z-index: 1
+
+    .collection-details
+        width: 100%
+        margin-bottom: 30px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        font-size: $collectionOptionsTextSize
+        line-height: $collectionOptionsLineHeight
+        font-weight: $collectionOptionsWeight
+        .collection-sort
+            background-color: $onoBG
+            z-index: 2
+            width: 140px
+            background-image: url('../images/large-select-arrow.svg') !important
+            background-repeat: no-repeat
+            background-position: 100% 50%
+            option
+                background-color: $onoBG
+                padding: 10px
+        @media only screen and (max-width: 650px)
+            flex-direction: column
+            align-items: flex-start
+            span
+                display: inline-block
+                margin-bottom: 25px
+                padding-left: 5px
+
+    h2
+        text-align: center
+        margin-bottom: 30px
+
+    button
+        margin-top: 30px

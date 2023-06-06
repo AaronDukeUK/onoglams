@@ -1,0 +1,131 @@
+@import "variables"
+
+.register-page
+    position: relative
+    background: $onoBG
+    min-height: 825px
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    @media only screen and (max-width: 650px)
+        min-height: auto
+
+    .leaf
+        position: absolute
+        background-image: url('../images/bannerleaf.png')
+        width: 380px
+        height: 320px
+        background-size: contain
+        background-repeat: no-repeat
+        @media only screen and (max-width: 1200px)
+            width: 290px
+            height: 243px
+        @media only screen and (max-width: 650px)
+            width: 168px
+            height: 141px
+
+    .left
+        transform: matrix(-1, 0, 0, 1, 0, 0)
+        left: -40px
+        @media only screen and (max-width: 900px)
+            left: -140px
+        @media only screen and (max-width: 650px)
+            left: -80px
+            bottom: 40px
+
+    .right
+        right: -40px
+        @media only screen and (max-width: 900px)
+            right: -140px
+        @media only screen and (max-width: 650px)
+            right: -80px
+            top: 40px
+
+    .register-info
+        padding: 60px 100px
+        background: white
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        z-index: 1
+        @media only screen and (max-width: 650px)
+            padding: 50px 30px
+            margin: 50px 0
+        @media only screen and (max-width: 450px)
+            width: 90%
+
+    h2
+        color: $onogreen
+        margin-bottom: 60px
+
+    p   
+        font-size: 15px
+        color: #272727
+        margin: 0 auto
+
+    a   
+        color: $onogreen
+        border-bottom: 1px solid $onogreen
+
+    button
+        color: $onogreen
+        font-size: 15px
+        margin: 50px auto
+
+    form
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+
+    .group               
+        position: relative
+        margin-bottom: 35px
+        width: 355px
+        @media only screen and (max-width: 450px)
+            width: 100%
+
+    input
+        width: 100%
+        height: 35px
+        padding: 5px
+        font-size: $bodyTextSize
+
+    label
+        font-size: $bodyTextSize
+        line-height: $bodyTextLineHeight
+        color: #272727
+        position: absolute
+        pointer-events: none
+        left: 5px
+        top: 5px
+        transition: 0.2s ease all
+
+    input:focus ~ label, input:valid ~ label
+        top: -25px
+        left: 5px
+        font-size: 14px
+        color: $onogreen
+
+    .bar
+        position: relative
+        display: block
+        width: 100%
+        height: 1px
+        background: #272727
+
+    .eye
+        position: absolute
+        right: 0
+        top: 5px
+        cursor: pointer
+
+    .errors
+        li
+            margin-bottom: 20px
+            font-size: $bodyTextSize
+            line-height: $bodyTextLineHeight
+            color: tomato
+

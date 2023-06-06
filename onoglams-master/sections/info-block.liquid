@@ -1,0 +1,48 @@
+<section class="info-block">
+    <div class="container">
+        <div class="info-container">
+            <div class="info-image"></div>
+            <div class="info-description">
+                <h2 data-aos="fade-up">{{ section.settings.info_title }}</h2>
+                <p data-aos="fade-up" data-aos-delay="100">{{ section.settings.info_text }}</p>
+                <a data-aos="fade-up" data-aos-delay="200" href="/pages/about">
+                    <button class="btn-green invert-btn-green">
+                        {{ section.settings.info_button }}
+                        <span class="svg svg-green">
+                            {% include 'button-svg' %}
+                        </span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+
+{
+    "name": "Info Block",
+    "settings": [
+        {
+            "type": "text",
+            "id": "info_title",
+            "label": "Title",
+            "default": "Why Onoglams?",
+            "placeholder": "Change Title Here..."
+        }, {
+            "type": "textarea",
+            "id": "info_text",
+            "label": "Description",
+            "default": "Our easiest chuck-on-and-go staples come with a serious style heritage that’s liberating, sexy, comfy and supremely cool. Our easiest chuck-on-and-go staples come with a serious style heritage that’s liberating, sexy, comfy and supremely cool.",
+            "placeholder": "Change Description Here..."
+        }, {
+            "type": "text",
+            "id": "info_button",
+            "label": "Info Button Text",
+            "default": "Learn More",
+            "placeholder": "Change Button Here..."
+        }
+    ]
+}
+
+{% endschema %}

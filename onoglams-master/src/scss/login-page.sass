@@ -1,0 +1,128 @@
+@import "variables"
+.login-page
+    position: relative
+    color: $onogreen
+    background: $onoBG
+    min-height: 825px
+    overflow: hidden
+    @media only screen and (max-width: 650px)
+        min-height: auto
+
+    .container
+        min-height: 825px
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        @media only screen and (max-width: 650px)
+            flex-direction: column
+            min-height: auto
+
+    .account-image
+        width: 50%
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        background-image: url('../images/sign-in-image.jpg')
+        background-size: cover
+        background-repeat: no-repeat
+        @media only screen and (max-width: 800px)
+            background-position: 40%
+        @media only screen and (max-width: 650px)
+            width: calc(100% + 80px)
+            position: static
+            height: 300px
+            background-position: top
+
+    .mobile-image
+        display: none
+        @media only screen and (max-width: 650px)
+            display: block
+
+    .large-image
+        @media only screen and (max-width: 650px)
+            display: none
+
+    .account-info
+        width: 50%
+        height: 100%
+        padding: 60px 60px 60px 0
+        @media only screen and (max-width: 650px)
+            width: 100%
+            padding: 30px 0
+
+    h2
+        margin-bottom: 20px
+
+    p   
+        font-size: 15px
+        color: #272727
+        margin-bottom: 20px
+
+    .forgot   
+        font-size: 12px
+        margin-top: 20px
+        color: $onogreen
+        border-bottom: 1px solid $onogreen
+
+    button
+        font-size: 15px
+
+    form
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: space-between
+        margin: 40px 0 20px 0
+
+    .group               
+        position: relative
+        margin-bottom: 35px
+        width: 355px
+        @media only screen and (max-width: 900px)
+            width: 100%
+            max-width: 400px
+
+    input
+        width: 100%
+        height: 35px
+        background: $onoBG
+        padding: 5px
+        font-size: $bodyTextSize
+
+    label
+        font-size: $bodyTextSize
+        line-height: $bodyTextLineHeight
+        color: #272727
+        position: absolute
+        pointer-events: none
+        left: 5px
+        top: 5px
+        transition: 0.2s ease all
+
+    input:focus ~ label, input:valid ~ label
+        top: -25px
+        left: 5px
+        font-size: 14px
+        color: $onogreen
+
+    .bar
+        position: relative
+        display: block
+        width: 100%
+        height: 1px
+        background: #272727
+
+    .new
+        margin-top: 80px
+        @media only screen and (max-width: 900px)
+            margin-top: 40px
+    
+    .errors
+        li
+            margin-bottom: 20px
+            font-size: $bodyTextSize
+            line-height: $bodyTextLineHeight
+            color: tomato
+

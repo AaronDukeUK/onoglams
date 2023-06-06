@@ -1,0 +1,69 @@
+<!-- /templates/customers/login.liquid -->
+{% if customer  %}
+    <script type="text/javascript">
+        window.location = "/account";
+    </script>
+{% endif %}
+
+<div class="login-page">
+    <div class="container">
+        <div class="account-image mobile-image"></div>
+        <div class="account-info">
+            <h2 data-aos="fade-up">Welcome back!</h2>
+            {% form 'customer_login' %}
+                {{ form.errors | default_errors }}
+
+                <div data-aos="fade-up" data-aos-delay="50" class="group">
+                    <input name="customer[email]" name="email" required type="email"/>
+
+                    <span class="bar"></span>
+                    <label>Your email</label>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="100" class="group">
+                    <input id="passwordInput" name="customer[password]" required type="password"/>
+                    <span class="bar"></span>
+                    <label>Your password</label>
+                </div>
+
+                <button data-aos="fade-up" data-aos-delay="150" class="btn-green invert-btn-green" type="submit">
+                    Log In
+                    <span class="svg svg-green">
+                        {% include 'button-svg' %}
+                    </span>
+                </button>
+
+
+            {% endform %}
+            <a data-aos="fade-up" data-aos-delay="200" class="forgot" href="/pages/recover-password">
+                Forgotten your password?
+            </a>
+            <div class="new">
+                <h2 data-aos="fade-up" data-aos-delay="250">New to Onoglams?</h2>
+                <p data-aos="fade-up" data-aos-delay="300">Sign up and recieve exclusive offers and discounts.</p>
+                <a data-aos="fade-up" data-aos-delay="350" href="/account/register">
+                    <button class="btn-green invert-btn-green">
+                        Create Account
+                        <span class="svg svg-green">
+                            {% include 'button-svg' %}
+                        </span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="account-image large-image"></div>
+</div>
+
+<script>
+  const input = document.getElementById("passwordInput");
+  
+  passwordVisible = () => {
+    if (input.type === "password") {
+      input.type = "text";
+    } else {
+      input.type = "password";
+    }
+  }
+
+</script>

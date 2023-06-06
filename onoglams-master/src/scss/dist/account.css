@@ -1,0 +1,193 @@
+.account-page {
+  background: #fdfaf7;
+  min-height: 825px;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (max-device-width: 650px) {
+  .account-page {
+    min-height: auto;
+  }
+}
+.account-page .container {
+  min-height: 825px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media only screen and (max-device-width: 650px) {
+  .account-page .container {
+    flex-direction: column;
+    justify-content: center;
+    min-height: auto;
+  }
+}
+.account-page .account-image {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url("../images/account.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-device-width: 800px) {
+  .account-page .account-image {
+    background-image: url("../images/account-tablet.png");
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  .account-page .account-image {
+    width: calc(100% + 80px);
+    height: 150px;
+    position: static;
+    background-image: url("../images/account-mobile.png");
+  }
+}
+.account-page .account-info {
+  padding: 70px 180px 70px 90px;
+  background: white;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+}
+.account-page .account-info h2 {
+  color: #00442a;
+  margin-bottom: 40px;
+}
+.account-page .account-info a {
+  display: inline-block;
+  position: relative;
+  width: 225px;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: #272727;
+  border-bottom: 1px solid #3d2d2d;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+@media only screen and (max-device-width: 650px) {
+  .account-page .account-info a {
+    width: 100%;
+  }
+}
+.account-page .account-info a svg {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+.account-page .account-info a:last-child {
+  border-bottom: none;
+  margin: 15px 0 0 0;
+  font-weight: bold;
+}
+@media only screen and (max-device-width: 750px) {
+  .account-page .account-info {
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  .account-page .account-info {
+    width: 95%;
+    margin: 40px 0 70px 0;
+    padding: 40px 30px;
+  }
+}
+.account-page #account-orders {
+  display: none;
+}
+.account-page .order-info {
+  padding: 60px 100px;
+  background: white;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+}
+@media only screen and (max-device-width: 1050px) {
+  .account-page .order-info {
+    margin: 0 auto;
+    width: 90%;
+    padding: 50px;
+    align-items: center;
+  }
+}
+@media only screen and (max-device-width: 850px) {
+  .account-page .order-info {
+    width: 95%;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  .account-page .order-info {
+    margin: 40px 0 70px 0;
+    padding: 40px 30px;
+  }
+}
+.account-page .order-info h2 {
+  color: #00442a;
+  margin-bottom: 40px;
+  align-self: flex-start;
+}
+.account-page .order-info h3 {
+  font-size: 1.5rem;
+  color: black;
+  font-family: "Karla";
+  font-weight: bold;
+}
+.account-page .order-info .back {
+  margin-top: 30px;
+  color: #00442a;
+  border-bottom: 1px solid #00442a;
+}
+.account-page .order-info .no-orders {
+  text-align: center;
+}
+.account-page .orders-container {
+  width: 600px;
+  display: grid;
+  column-gap: 30px;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr;
+  justify-items: start;
+  align-items: start;
+  margin-bottom: 30px;
+}
+.account-page .orders-container .mobile {
+  display: none;
+}
+@media only screen and (max-device-width: 1050px) {
+  .account-page .orders-container {
+    width: 100%;
+    column-gap: 20px;
+    row-gap: 5px;
+  }
+}
+@media only screen and (max-device-width: 730px) {
+  .account-page .orders-container {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+  }
+  .account-page .orders-container h3 {
+    display: none;
+  }
+  .account-page .orders-container .mobile {
+    display: block;
+  }
+  .account-page .orders-container > p {
+    display: none;
+  }
+}
+.account-page .order-id {
+  color: #00442a;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  font-family: "Karla", sans-serif;
+}

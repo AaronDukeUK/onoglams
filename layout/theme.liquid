@@ -1,0 +1,54 @@
+<!doctype html>
+<head>
+  <title>{{ page_title }}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="{{ page_description | escape }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  {{ content_for_header }} <!-- Header hook for plugins -->
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js' | script_tag }}
+  {{ 'application.css' | asset_url | stylesheet_tag }}
+  <script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {
+      "consentOnContinuedBrowsing":false,
+      "lang":"en",
+      "siteId":2022039,
+      "cookiePolicyId":10436331,
+      "banner":{"acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-bottom-left","acceptButtonColor":"#00442a","acceptButtonCaptionColor":"white","customizeButtonColor":"#f2f2f2","customizeButtonCaptionColor":"#010101","rejectButtonColor":"#f2f2f2","rejectButtonCaptionColor":"#010101","textColor":"#010101","backgroundColor":"#ffffff","rejectButtonDisplay":true },
+      "callback": {
+        onConsentGiven: function(){
+          window.Shopify.customerPrivacy.setTrackingConsent(true, function(){});
+        }
+      }
+    };
+  </script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+</head>
+<body>
+  {% section 'announcement' %}
+  {% section 'navbar' %}
+  <main role="main">
+    {{ content_for_layout }}
+  </main>
+  {% section 'footer' %}
+  <script>
+    (function () {
+      var REDIRECT_PATH = '/account';
+
+      var selector = '#create_customer, form[action$="/account"][method="post"]',
+        $form = document.querySelectorAll(selector)[0];
+
+      if ($form) {
+        $redirect = document.createElement('input');
+        $redirect.setAttribute('name', 'return_to');
+        $redirect.setAttribute('type', 'hidden');
+        $redirect.value = REDIRECT_PATH;
+        $form.appendChild($redirect);
+      }
+    })();
+  </script>
+  {{ 'application.js' | asset_url | script_tag }}
+</body>
+</html>

@@ -1,0 +1,51 @@
+<section class="about-page">
+    <div class="container about-container">
+        <h2 data-aos="fade-up">{{section.settings.about_title}}</h2>
+        <p data-aos="fade-up" data-aos-delay="100">{{section.settings.about_text}}</p>
+        <div class="about-image">
+            {% if section.settings.about_image != blank %}
+                {{ section.settings.about_image | img_url: '800x600' | img_tag }}
+            {% else %}
+                {{ 'about-page.png' | asset_img_url: '800x600' | img_tag }}
+            {% endif %}
+        </div>
+        <p data-aos="fade-up">{{section.settings.about_text_two | newline_to_br}}</p>
+    </div>
+</section>
+
+
+{% schema %}
+
+{
+"name": "About Page",
+"settings": [
+{
+"type": "text",
+"id": "about_title",
+"label": "About Title",
+"default": "Headline goes here",
+"placeholder": "Change Text Here..."
+},
+{
+"type": "textarea",
+"id": "about_text",
+"label": "About Description",
+"default": "Our easiest chuck-on-and-go staples come with a serious style heritage that’s liberating, sexy, comfy and supremely cool. Our easiest chuck-on-and-go staples come with a serious style heritage that’s liberating, sexy, comfy and supremely cool.",
+"placeholder": "Change Text Here..."
+},
+{
+"type": "image_picker",
+"id": "about_image",
+"label": "About Image"
+},
+{
+"type": "textarea",
+"id": "about_text_two",
+"label": "About Description Two",
+"default": "Our easiest chuck-on-and-go staples come with a serious style heritage that’s liberating, sexy, comfy and supremely cool. Our easiest chuck-on-and-go staples come with a serious style heritage that’s liberating, sexy, comfy and supremely cool.",
+"placeholder": "Change Text Here..."
+}
+]
+}
+
+{% endschema %}

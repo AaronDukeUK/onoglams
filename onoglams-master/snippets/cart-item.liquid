@@ -1,0 +1,14 @@
+<article data-aos="fade-up" data-aos-delay="{{ index | times: 50 }}" class="cart-item">
+    <img src="{{ item | img_url: '280x320' }}" alt="{{ item.title | escape }}"/>
+    <div class="product-info">
+        <div>
+            <span class="product-price">{{ item.line_price | money }}</span>
+            <a class="product-title" href="{{ item.url }}">{{
+        item.product.title
+      }}</a>
+            <p class="product-variant">{{ item.variant.title }}</p>
+        </div>
+        <input onchange="this.form.submit();" type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0"/>
+    </div>
+    <a class="cart-remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{% include 'cart-remove' %}</a>
+</article>
