@@ -1,0 +1,28 @@
+.info-page {
+  padding: 80px 0 40px 0;
+  width: 100%;
+  background: #fdfaf7;
+  color: #00442a;
+}
+@media only screen and (max-device-width: 1200px) {
+  .info-page {
+    padding: 40px 0;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  .info-page {
+    padding: 0;
+  }
+}
+
+.info-container {
+  width: 540px;
+}
+.info-container p {
+  padding: 40px 0;
+}
+@media only screen and (max-device-width: 1200px) {
+  .info-container {
+    width: 100%;
+  }
+}

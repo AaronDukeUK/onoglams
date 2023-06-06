@@ -1,0 +1,194 @@
+@import "variables"
+
+.product-page
+    padding: 150px 0 50px 0
+    width: 100%
+    background: $onoBG
+    color: $onogreen
+    position: relative
+    overflow: hidden
+    @media only screen and (max-width: 1200px)
+        padding: 60px 0
+    @media only screen and (max-width: 650px)
+        padding: 30px 0
+
+    .leaf
+        position: absolute
+        width: 288px
+        height: 241px
+        background-image: url('../images/bannerleaf.png')
+        background-size: contain
+        background-repeat: no-repeat
+        @media only screen and (max-width: 650px)
+            width: 183px
+            height: 101px
+
+    .left
+        transform: matrix(-1, 0, 0, 1, 0, 0)
+        left: -40px
+        bottom: 0px
+        @media only screen and (max-width: 1280px)
+            left: -120px
+        @media only screen and (max-width: 1200px)
+            bottom: 50%
+        @media only screen and (max-width: 650px)
+            display: none
+            
+    .right
+        right: -40px
+        top: 275px
+        @media only screen and (max-width: 1280px)
+            right: -120px
+        @media only screen and (max-width: 650px)
+            right: -80px
+            top: 30px
+
+
+    button
+        width: 280px
+        height: 45px
+        color: white
+        background: $onogreen
+        text-transform: none
+        font-size: 14px
+        display: block
+
+    select
+        width: 175px
+        height: 45px
+        border: 1px solid $onogreen
+        font-size: 14px
+        padding: 10px
+        &:focus
+            outline: none
+
+    input
+        width: 85px
+        height: 45px
+        border: 1px solid $onogreen
+        font-size: 14px
+        padding: 5px
+        margin: 20px 18px 20px 0
+        &:focus
+            outline: none
+
+    #Quantity
+        padding: 0 15px    
+
+
+    .container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        position: relative
+        @media only screen and (max-width: 1200px)
+            flex-direction: column
+            justify-content: center
+
+    .product-information
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: space-between
+        margin: 0 auto 0 45px
+        @media only screen and (max-width: 1200px)
+            margin: 90px 0 0 0
+            width: 100%
+            padding: 0 30px
+            max-width: 588px
+        @media only screen and (max-width: 650px)
+            padding: 0
+
+
+        p
+            display: inline-block
+            margin-top: 15px
+            width: 425px
+            color: #272727
+            @media only screen and (max-width: 1200px)
+                width: 100%
+
+    p.free-delivery
+        color: $onogreen
+        font-weight: 700
+
+    p.product-description-block
+        margin-top: 20px
+
+    .product-extras
+        p
+            display: block
+
+        a   
+            display: inline-block
+            color: #272727
+            margin-top: 30px
+            border-bottom: 1px solid #272727
+
+    .product-link-map
+        position: absolute
+        top: -50px
+        left: 0
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        @media only screen and (max-width: 1200px)
+            position: static
+            align-self: flex-start
+        @media only screen and (max-width: 650px)
+            align-self: center
+        @media only screen and (max-width: 400px)
+            align-self: flex-start
+        p
+            @media only screen and (max-width: 365px)
+                font-size: 1.4rem
+        svg
+            margin: 0 15px
+
+
+.images-container 
+    width: 510px
+    height: 630px
+    position: relative
+    z-index: 1
+    @media only screen and (max-width: 1200px)
+        width: 100%
+        max-width: 588px
+        height: 726px
+        margin-top: 40px
+    @media only screen and (max-width: 650px)
+        max-width: 320px
+        height: 390px
+        margin-top: 85px
+    @media only screen and (max-width: 450px)
+        width: 100%
+
+    img
+        display: none
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    .controls
+        position: absolute
+        bottom: -40px
+        right: 0
+        width: 150px
+        user-select: none
+        display: flex
+        align-items: center
+        justify-content: space-between
+        a
+            cursor: pointer
+
+    .fade 
+        animation-name: fade
+        animation-duration: 0s
+        animation-timing-function: ease-in-out
+        position: relative
+
+    @keyframes fade 
+        0%
+            opacity: 0.8
+        100%
+            opacity: 1

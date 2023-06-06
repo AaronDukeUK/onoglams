@@ -1,0 +1,47 @@
+@import "variables"
+
+.collection-hero
+    font-size: 4rem
+    height: $collectionHeroHeight
+    background-image: linear-gradient(to top,rgba(0,0,0,0.5), rgba(0,0,0,0)), url('../images/collectionherobg.jpg')
+    background-size: cover
+    background-position: center
+    @media only screen and (max-width: 800px)
+        height: $collectionHeroHeight-medium
+        background-image: linear-gradient(to top,rgba(0,0,0,0.5), rgba(0,0,0,0)), url('../images/collectionherobg-tablet.jpg')
+    @media only screen and (max-width: 450px)
+        height: $collectionHeroHeight-small
+        background-image: linear-gradient(to top,rgba(0,0,0,0.5), rgba(0,0,0,0)), url('../images/collectionherobg-phone.jpg')
+
+    .container
+        display: flex
+        align-items: flex-end
+        justify-content: flex-end
+        @media only screen and (max-width: 1250px)
+            width: 100%
+            
+
+    .collection-heroContent
+        color: white
+        width: 100%
+        margin-bottom: 90px
+        @media only screen and (max-width: 1250px)
+            margin-bottom: 55px
+        @media only screen and (max-width: 650px)
+            margin-bottom: 90px
+
+        h1
+            font-size: $heroHeaderTextSize
+            line-height: $heroHeaderLineHeight
+            @media only screen and (max-width: 650px)
+                font-size: $heroHeaderTextSize-small
+                line-height: $heroHeaderLineHeight-small
+
+        p
+            width: 535px
+            margin: 25px 0
+            @media only screen and (max-width: 800px)
+                margin: 25px 0 90px 0
+            @media only screen and (max-width: 650px)
+                width: 100%
+                margin: 25px 0 65px 0

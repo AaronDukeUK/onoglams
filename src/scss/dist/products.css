@@ -1,0 +1,89 @@
+.product-container, .featured-product-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+@media only screen and (max-device-width: 1200px) {
+  .product-container, .featured-product-container {
+    justify-content: center;
+  }
+}
+.product-container .product, .featured-product-container .product {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  width: 355px;
+}
+@media only screen and (max-device-width: 1200px) {
+  .product-container .product, .featured-product-container .product {
+    margin: 20px;
+  }
+}
+@media only screen and (max-device-width: 850px) {
+  .product-container .product, .featured-product-container .product {
+    width: 40%;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  .product-container .product, .featured-product-container .product {
+    flex-grow: 1;
+    margin: 20px 5px;
+  }
+}
+@media only screen and (max-device-width: 350px) {
+  .product-container .product, .featured-product-container .product {
+    width: 100%;
+  }
+}
+.product-container .product img, .featured-product-container .product img {
+  margin-bottom: 25px;
+  width: 100%;
+  height: 438px;
+  object-fit: cover;
+}
+@media only screen and (max-device-width: 850px) {
+  .product-container .product img, .featured-product-container .product img {
+    height: 400px;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  .product-container .product img, .featured-product-container .product img {
+    height: 200px;
+  }
+}
+@media only screen and (max-device-width: 450px) {
+  .product-container .product img, .featured-product-container .product img {
+    height: 180px;
+  }
+}
+@media only screen and (max-device-width: 350px) {
+  .product-container .product img, .featured-product-container .product img {
+    height: 200px;
+  }
+}
+.product-container .product h3, .featured-product-container .product h3 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  font-weight: 500;
+}
+@media only screen and (max-device-width: 650px) {
+  .product-container .product h3, .featured-product-container .product h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media only screen and (max-device-width: 650px) {
+  .featured-product-container .product:last-child img {
+    height: 400px;
+  }
+}
+@media only screen and (max-device-width: 350px) {
+  .featured-product-container .product:last-child img {
+    height: 200px;
+  }
+}

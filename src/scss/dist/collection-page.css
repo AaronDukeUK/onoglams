@@ -1,0 +1,90 @@
+.collection-page {
+  padding: 10rem 0rem;
+  background: #fdfaf7;
+  color: #00442a;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (max-device-width: 650px) {
+  .collection-page {
+    padding: 8rem 0rem;
+  }
+}
+.collection-page .leaf {
+  position: absolute;
+  width: 288px;
+  height: 241px;
+  background-image: url("../images/bannerleaf.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-device-width: 650px) {
+  .collection-page .leaf {
+    width: 216px;
+    height: 181px;
+  }
+}
+.collection-page .left {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  left: -40px;
+  bottom: 275px;
+}
+@media only screen and (max-device-width: 1250px) {
+  .collection-page .left {
+    display: none;
+  }
+}
+.collection-page .right {
+  right: -40px;
+  top: 275px;
+}
+@media only screen and (max-device-width: 1250px) {
+  .collection-page .right {
+    top: 90px;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  .collection-page .right {
+    top: 120px;
+  }
+}
+.collection-page .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.collection-page .collection-details {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  font-weight: 500;
+}
+.collection-page .collection-details select {
+  background-color: #fdfaf7;
+}
+.collection-page .collection-details select option {
+  background-color: #fdfaf7;
+}
+@media only screen and (max-device-width: 650px) {
+  .collection-page .collection-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .collection-page .collection-details span {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding-left: 5px;
+  }
+}
+.collection-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.collection-page button {
+  margin-top: 30px;
+}

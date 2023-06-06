@@ -1,0 +1,48 @@
+@import "variables"
+
+.banner
+    width: 100%
+    height: $bannerHeight
+    background: $onoPink
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    position: relative
+
+    .leaf
+        position: absolute
+        width: 290px
+        height: 240px
+        background-image: url('../images/bannerleaf.png')
+        background-size: contain
+        background-repeat: no-repeat
+        @media only screen and (max-width: 1200px)
+            width: 160px
+            height: 130px
+
+    .left
+        transform: matrix(-1, 0, 0, 1, 0, 0)
+        left: -40px
+        @media only screen and (max-width: 1200px)
+            bottom: 20px
+        @media only screen and (max-width: 650px)
+            left: -80px
+
+    .right
+        right: -40px
+        @media only screen and (max-width: 1200px)
+            top: 5px
+        @media only screen and (max-width: 650px)
+            right: -80px
+
+    h2
+        color: $onogreen
+        line-height: $bannerTextLineHeight
+        width: 50%
+        max-width: 650px
+        text-align: center
+        @media only screen and (max-width: 768px)
+            width: 85%
+        @media only screen and (max-width: 650px)
+            line-height: $titleLineHeight-small

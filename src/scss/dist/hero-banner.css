@@ -1,0 +1,28 @@
+.about-banner {
+  width: 100%;
+  height: 420px;
+  background: #f5c0af;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.about-banner .leaf {
+  width: 288px;
+  height: 241px;
+  background-image: url("../images/bannerleaf.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.about-banner .left {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  margin-left: -40px;
+}
+.about-banner .right {
+  margin-right: -40px;
+}
+.about-banner h2 {
+  color: #00442a;
+  width: 650px;
+  text-align: center;
+}

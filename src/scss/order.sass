@@ -1,0 +1,150 @@
+@import "variables"
+    
+.orderPage
+    position: relative
+    background: $onoBG
+    padding: 120px 0
+    overflow: hidden
+    @media only screen and (max-width: 650px)
+        padding: 190px 0 120px 0
+    &__container
+        position: relative
+        padding: 65px 95px
+        max-width: calc(725px + 95px + 95px)
+        background: white
+        margin: 0 auto
+        z-index: 1
+        @media only screen and (max-width: 850px)
+            padding: 65px 78px
+        @media only screen and (max-width: 650px)
+            padding: 50px 20px
+    &__heading
+        color: $onogreen
+        margin-bottom: 10px
+    &__details
+        display: grid
+        column-gap: 30px
+        row-gap: 10px
+        grid-template-columns: 3fr 2fr 2fr 1fr 2fr
+        grid-template-rows: 1fr
+        justify-items: start
+        align-items: start
+        margin: 30px 0
+    &__lines
+        display: grid
+        column-gap: 30px
+        row-gap: 10px
+        grid-template-columns: 3fr 2fr 2fr 1fr 2fr
+        grid-template-rows: 1fr
+        justify-items: start
+        align-items: start
+        margin: 0 0 30px 0
+        @media only screen and (max-width: 650px)
+            column-gap: 15px
+            row-gap: 0
+            grid-template-columns: 1fr 1fr
+            grid-template-areas: "title sku" "title price" "title quantity" "title total"
+    &__totals
+        display: grid
+        grid-template-columns: 6fr 1fr
+        grid-template-rows: 1fr
+        column-gap: 120px
+        row-gap: 10px
+        margin: 30px 0
+        border-bottom: 1px solid #272727
+        padding-bottom: 30px
+        @media only screen and (max-width: 650px)
+            column-gap: 15px
+            row-gap: 0
+            grid-template-columns: 1fr 1fr
+    &__addresses
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: 1fr
+        column-gap: 0
+        row-gap: 10px
+        @media only screen and (max-width: 650px)
+            column-gap: 15px
+    &__address
+        flex-grow: 1
+
+    &__detailsHeading
+        font-family: 'Karla'
+        font-size: 15px
+        font-weight: bold
+        @media only screen and (max-width: 650px)
+            font-size: 14px
+
+    &__detailsbody
+        font-size: 15px
+        @media only screen and (max-width: 650px)
+            font-size: 14px
+
+    .green
+        @media only screen and (max-width: 650px)
+            color: $onogreen
+
+
+    .right
+        text-align: right
+        margin: 0 0 0 auto
+        @media only screen and (max-width: 650px)
+            text-align: left
+            margin: 0
+
+    .addressHeader
+        margin-bottom: 15px
+
+    .back
+        display: inline-block
+        margin-top: 45px
+        color: $onogreen
+        border-bottom: 1px solid $onogreen
+        @media only screen and (max-width: 650px)
+            font-size: 14px
+
+    .colTitle
+        @media only screen and (max-width: 650px)
+            display: none
+    
+    .itemTitle
+        @media only screen and (max-width: 650px)
+            font-weight: bold
+            grid-area: title
+    .sku
+        @media only screen and (max-width: 650px)
+            grid-area: sku
+    .price
+        @media only screen and (max-width: 650px)
+            grid-area: price
+    .quantity
+        @media only screen and (max-width: 650px)
+            grid-area: quantity
+    .total
+        @media only screen and (max-width: 650px)
+            grid-area: total
+
+    .mobileDesc
+        display: none
+        @media only screen and (max-width: 650px)
+            display: inline
+
+    .order-image
+        position: absolute
+        width: 50%
+        top: -1px
+        bottom: 0
+        right: 0
+        background-image: url('../images/account.png')
+        background-size: cover
+        background-repeat: no-repeat
+        @media only screen and (max-width: 800px)
+            background-image: url('../images/account-tablet.png')
+        @media only screen and (max-width: 650px)
+            width: 100%
+            height: 150px
+            top: 0
+            left: 0
+            right: 0
+            background-image: url('../images/account-mobile.png')
+

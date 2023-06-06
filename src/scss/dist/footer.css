@@ -1,0 +1,136 @@
+footer {
+  position: relative;
+  background: #00442a;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+@media only screen and (max-device-width: 650px) {
+  footer {
+    height: auto;
+  }
+}
+footer .footer-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 0;
+}
+@media only screen and (max-device-width: 650px) {
+  footer .footer-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+footer a, footer p {
+  font-size: 1.6rem;
+  line-height: 18px;
+  color: white;
+  margin-bottom: 15px;
+}
+footer .footer-right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 100px;
+}
+@media only screen and (max-device-width: 650px) {
+  footer .footer-right {
+    margin-right: 0;
+  }
+}
+footer .social {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65px;
+}
+footer .footer-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer .footer-left .footer-links {
+  width: 290px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+footer .footer-left .footer-links ul {
+  width: 120px;
+}
+footer .footer-left .footer-links a {
+  display: block;
+}
+footer .mbs {
+  padding: 2px 0;
+  border-bottom: 1px solid white;
+}
+footer .footerleaf {
+  position: absolute;
+  right: -10px;
+  bottom: 70px;
+  width: 160px;
+  height: 135px;
+  background-image: url("../images/footerleaf.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-device-width: 1250px) {
+  footer .footerleaf {
+    top: 30px;
+    bottom: none;
+  }
+}
+@media only screen and (max-device-width: 450px) {
+  footer .footerleaf {
+    width: 120px;
+    height: 105px;
+    top: 20px;
+  }
+}
+footer .nomarg {
+  margin-bottom: 0;
+}
+footer .phone-social {
+  display: none;
+  margin: 20px 0;
+}
+@media only screen and (max-device-width: 650px) {
+  footer .phone-social {
+    display: flex;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  footer .large-social {
+    display: none;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  footer .footer-right {
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-device-width: 650px) {
+  footer .copy {
+    display: none;
+  }
+}
+footer .copy-phone {
+  width: 100%;
+  text-align: center;
+  display: none;
+  margin-top: 70px;
+}
+@media only screen and (max-device-width: 650px) {
+  footer .copy-phone {
+    display: block;
+  }
+}
