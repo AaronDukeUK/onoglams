@@ -2,8 +2,8 @@
   "name": "onoglams",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:MadeBySphere/onoglams.git",
-  "author": "Chris Ingram <chris@chrisingram.me>",
+  "repository": "git@github.com:AaronDukeUK/onoglams.git",
+  "author": "Aaron Duke <hello@aaronduke.co.uk>",
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
