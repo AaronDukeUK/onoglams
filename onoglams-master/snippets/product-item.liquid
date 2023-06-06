@@ -1,9 +1,0 @@
-<article data-aos="fade-up" data-aos-delay="{{index | modulo: 3 | times: 50}}" class="product">
-    <a href="{{ item.url | within: collection }}">
-        <img src="{{ item.featured_image.src | img_url : '710x876' }}" alt="{{ item.featured_image.alt | escape }}"/>
-    </a>
-    <a href="{{ item.url | within: collection }}">
-        <h3>{{item.title}}</h3>
-    </a>
-    <p>{{ item.price | money }}</p>
-</article>
